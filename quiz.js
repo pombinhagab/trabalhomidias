@@ -188,12 +188,11 @@ const dadosQuiz = [
   botaoTentarNovamente.addEventListener('click', tentarNovamenteQuiz);
   botaoMostrarResposta.addEventListener('click', mostrarResposta);
 
-  // Função para calcular a pontuação com base nas questões acertadas
+  
 function calcularPontuacao() {
-  return pontuacao; // Neste caso, vamos simplesmente retornar o número de questões acertadas como pontuação
+  return pontuacao; 
 }
 
-// Função para exibir o resultado final e oferecer opções de troca de pontos
 function exibirResultado() {
   containerQuiz.style.display = 'none';
   botaoEnviar.style.display = 'none';
@@ -203,7 +202,6 @@ function exibirResultado() {
   const pontuacaoFinal = calcularPontuacao();
   containerResultado.innerHTML = `Você marcou ${pontuacaoFinal} de ${dadosQuiz.length}!`;
   
-  // Se o jogador tiver marcado pelo menos uma questão corretamente, oferecer opções de troca de pontos
   if (pontuacaoFinal > 0) {
     const botaoTrocarDesconto = document.createElement('button');
     botaoTrocarDesconto.textContent = 'Trocar Pontos por Desconto';
@@ -218,23 +216,17 @@ function exibirResultado() {
   }
 }
 
-// Função para trocar pontos por desconto
 function trocarPorDesconto() {
-  const pontosPorDesconto = 1; // Definindo a taxa de troca: 1 ponto por 1% de desconto
-  const descontoMaximo = 50; // Definindo o máximo de desconto que pode ser aplicado (em porcentagem)
+  const pontosPorDesconto = 1; 
+  const descontoMaximo = 50; 
 
   const pontuacaoFinal = calcularPontuacao();
   const descontoGanho = Math.min(pontuacaoFinal * pontosPorDesconto, descontoMaximo);
   
-  // Exibir mensagem com o desconto ganho
+
   alert(`Parabéns! Você ganhou ${descontoGanho}% de desconto em sua próxima compra.`);
 }
-
-// Função para trocar pontos por produto
 function trocarPorProduto() {
-  // Aqui você pode adicionar a lógica para permitir que o usuário escolha um produto para resgatar com seus pontos
-  // Por exemplo, você pode exibir uma lista de produtos e permitir que o usuário escolha um deles para resgatar com seus pontos
-  // Após a escolha do produto, você pode atualizar a interface do usuário e subtrair os pontos necessários da pontuação do jogador
   alert("Em breve, você poderá trocar seus pontos por produtos!");
 }
   
